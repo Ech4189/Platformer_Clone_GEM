@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
 /// Name: Matthew Borrelli
-/// Date(Last Edited): 10/31/24
+/// Date(Last Edited): 11/5/24
 /// Purpose: For controlling the player movement, shooting, and health
 /// </summary>
 public class PlayerController : MonoBehaviour
@@ -13,10 +13,12 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 10; //Dictates move speed of player
     public float jumpForce = 10;
 
-
+    
     //Matthew Private Variables 
     private Vector3 moveDir;
     private Rigidbody rb;
+    private bool facingRight = true; 
+
 
     // Start is called before the first frame update
     void Start()
@@ -30,27 +32,45 @@ public class PlayerController : MonoBehaviour
         //Matthew, Code for moving Left and Right
         void FixedUpdate()
         {
+        //Check for left input
             if (Input.GetKey(KeyCode.A))
             {
                 moveDir = Vector3.left;
                 rb.MovePosition(transform.position + moveDir * moveSpeed * Time.deltaTime);
+            //rotates character left
+            if (facingRight)
+            {
+                transform.rotation = Quaternion.Euler(0, 180, 0);
+                facingRight = false;
             }
+        }
+
+
+            //Check for right input
             if (Input.GetKey(KeyCode.D))
             {
                 moveDir = Vector3.right;
                 rb.MovePosition(transform.position + moveDir * moveSpeed * Time.deltaTime);
+            //rotates character right
+            if (!facingRight)
+            {
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+                facingRight = true;
             }
+        }
+
 
         }
     void Update()
     {
+        //Allows the player to jump
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
             print("Jumped");
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
     }
-    bool IsGrounded()
+    bool IsGrounded() //Checks if the player is on the ground so that there is no infinite jump
     {
         float raycastDist = 1.2f;
         {
