@@ -13,11 +13,13 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 10; //Dictates move speed of player
     public float jumpForce = 10;
 
+    public GameObject respawnPoint;
     
     //Matthew Private Variables 
     private Vector3 moveDir;
     private Rigidbody rb;
-    private bool facingRight = true; 
+    private bool facingRight = true;
+    private float playerHealth = 100;
 
 
     // Start is called before the first frame update
@@ -85,6 +87,15 @@ public class PlayerController : MonoBehaviour
             }
             return IsGrounded;
 
+        }
+    }
+    public void Respawn() //Respawns player
+    {
+        if(playerHealth <= 0)
+        {
+            Destroy(gameObject);
+            //Teleport player to respawn point 
+            transform.position = respawnPoint.transform.position;
         }
     }
 }
