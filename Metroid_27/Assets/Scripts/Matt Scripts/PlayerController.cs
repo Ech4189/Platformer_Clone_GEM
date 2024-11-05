@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
 {
     //Matthew Public Variables.
     public float moveSpeed = 10; //Dictates move speed of player
-
+    public float jumpForce = 10;
 
 
     //Matthew Private Variables 
@@ -42,5 +42,29 @@ public class PlayerController : MonoBehaviour
             }
 
         }
-    
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        {
+            print("Jumped");
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        }
+    }
+    bool IsGrounded()
+    {
+        float raycastDist = 1.2f;
+        {
+            bool IsGrounded = false;
+
+            //perform a raycast to check if player is on the ground
+            if (Physics.Raycast(transform.position, Vector3.down, raycastDist))
+            {
+                IsGrounded = true;
+
+                return IsGrounded;
+            }
+            return IsGrounded;
+
+        }
+    }
 }
