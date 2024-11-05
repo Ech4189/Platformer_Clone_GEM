@@ -14,13 +14,25 @@ public class Bullets : MonoBehaviour
     //Spawner will be activated by a key press rather than a timer
     //Spawner will be attached to the player 
 
+    //When bullet hits something it "dies"
+    //If it hits specific things, it does something before it "dies"
+
     //Need to be able to fire left and right, "if goingLeft" won't work here
 
-
+    [Header("Projectile Variables")]
+    public float speed;
+    //public bool going left, if it's false go right
 
     // Update is called once per frame
     void Update()
     {
+        //push key to fire
+
         
+    }
+
+    private void MoveBullet()
+    {
+        transform.position += speed * Vector3.left * Time.deltaTime;
     }
 }
