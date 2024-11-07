@@ -11,7 +11,8 @@ public class PlayerController : MonoBehaviour
 {
     //Matthew Public Variables.
     public float moveSpeed = 10; //Dictates move speed of player
-    public float jumpForce = 10;
+    public float jumpForce = 10; //Dictates jumpForce of the player
+    public float playerHealth = 99; //Dictates players health
 
     public GameObject respawnPoint;
     
@@ -19,7 +20,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 moveDir;
     private Rigidbody rb;
     private bool facingRight = true;
-    private float playerHealth = 100;
+    
 
 
     // Start is called before the first frame update
