@@ -11,6 +11,8 @@ using UnityEngine;
 public class Hazard : MonoBehaviour
 {
     public int enemyDamage;
+    public int enemyHealth;
+  
     public float playerHealth;
 
     private void OnCollisionEnter(Collision collision)

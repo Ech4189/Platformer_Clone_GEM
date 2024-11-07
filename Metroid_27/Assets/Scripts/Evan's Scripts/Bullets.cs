@@ -10,6 +10,8 @@ using UnityEngine;
 
 public class Bullets : MonoBehaviour
 {
+    public int bulletDamage;
+
     //Make laser and spawner - the laser will be the bullet
     //Spawner will be activated by a key press rather than a timer
     //Spawner will be attached to the player 

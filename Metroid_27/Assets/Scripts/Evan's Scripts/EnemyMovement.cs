@@ -30,6 +30,10 @@ public class EnemyMovement : MonoBehaviour
         EnemyMove();
     }
 
+
+    /// <summary>
+    /// moves the enemy
+    /// </summary>
     private void EnemyMove()
     {
         if (movingRight)
