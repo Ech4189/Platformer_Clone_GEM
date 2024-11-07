@@ -92,6 +92,7 @@ public class PlayerController : MonoBehaviour
     }
     public void Respawn() //Respawns player
     {
+        playerHealth --;
         if(playerHealth <= 0)
         {
             Destroy(gameObject);
