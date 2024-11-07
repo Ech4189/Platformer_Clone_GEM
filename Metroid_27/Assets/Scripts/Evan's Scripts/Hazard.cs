@@ -10,15 +10,24 @@ using UnityEngine;
 
 public class Hazard : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int enemyDamage;
+    public float playerHealth;
+
+    private void OnCollisionEnter(Collision collision)
     {
-        
+        if (collision.gameObject.GetComponent<PlayerController>())
+        {
+            //If hazard collides with player, the player health goes down by the amount the enemy damage is set to
+            playerHealth -= enemyDamage;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    /*private void OnTriggerEnter(Collider other)
     {
-        
-    }
+        if (other.gameObject.GetComponent<PlayerController>())
+        {
+            other.gameObject.GetComponent<PlayerController>().Respawn();
+        }
+    }*/
+
 }
