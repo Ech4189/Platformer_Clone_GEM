@@ -13,6 +13,11 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 10; //Dictates move speed of player
     public float jumpForce = 10; //Dictates jumpForce of the player
     public float playerHealth = 99; //Dictates players health
+    public bool isInvincible = false; //Checks if player has invincibility
+    public float invincibilityTime = 5; //Limits player time for invincibility
+
+    [SerializeField]
+    public float invincibilityDeltaTime;
 
     public GameObject respawnPoint;
     
@@ -20,11 +25,6 @@ public class PlayerController : MonoBehaviour
     private Vector3 moveDir; //Allows player to move in given directions
     private Rigidbody rb; //Gives player a rigidbody
     private bool facingRight = true; //Checks if player is facing right
-    private bool isInvincible = false; //Checks if player has invincibility
-    private float invincibilityTime = 5; //Limits player time for invincibility
-
-    [SerializeField] 
-    private float invincibilityDeltaTime;
 
     // Start is called before the first frame update
     void Start()
