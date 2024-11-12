@@ -108,8 +108,8 @@ public class PlayerController : MonoBehaviour
 
 
 
-    public IEnumerator InvincibilityFrames(float invincibilityTime)
-        //puts player into an Invincibility state
+    public IEnumerator InvincibilityFrames()
+    //puts player into an Invincibility state
     {
         isInvincible = true;
         for (float i = 0; i < invincibilityTime; i += invincibilityDeltaTime)
@@ -117,6 +117,6 @@ public class PlayerController : MonoBehaviour
 
             yield return new WaitForSeconds(invincibilityDeltaTime);
         }
-            isInvincible = false;
+        isInvincible = false;
     }
 }
