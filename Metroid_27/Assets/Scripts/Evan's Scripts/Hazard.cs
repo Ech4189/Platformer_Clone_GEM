@@ -12,15 +12,21 @@ public class Hazard : MonoBehaviour
 {
     public int enemyDamage;
     public int enemyHealth;
+    public float invincibilityTime;
   
     public float playerHealth;
 
+    /// <summary>
+    /// Subtracts the players' health when they get hit, and activates their invincibility frames 
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.GetComponent<PlayerController>())
         {
             //If hazard collides with player, the player health goes down by the amount the enemy damage is set to
             playerHealth -= enemyDamage;
+            collision.gameObject.GetComponent<PlayerController>().InvincibilityFrames();
         }
     }
     
@@ -29,6 +35,7 @@ public class Hazard : MonoBehaviour
     //Code must call the method when you are hit, and whenever you get hit in general check to see if the player
     //is invincible. Refer to the PlayerController Script 
 
+    //try an if statement - if the player collides with a hazard, it activates the blink
 
 
     /*private void OnTriggerEnter(Collider other)
