@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1148044131020895897}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.0089960005, y: 3.3170242, z: -27.986}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7e42b1cad42606e489b1b73c556a89b1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -152,6 +152,9 @@ MonoBehaviour:
   moveSpeed: 10
   jumpForce: 10
   playerHealth: 99
+  isInvincible: 0
+  invincibilityTime: 5
+  invincibilityDeltaTime: 5
   respawnPoint: {fileID: 0}
 --- !u!1001 &3178255435268137212
 PrefabInstance:

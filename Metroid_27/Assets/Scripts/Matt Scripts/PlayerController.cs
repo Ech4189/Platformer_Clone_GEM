@@ -76,6 +76,8 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
 
+
+        Respawn();
     }
     bool IsGrounded() //Checks if the player is on the ground so that there is no infinite jump
     {
@@ -96,10 +98,8 @@ public class PlayerController : MonoBehaviour
     }
     public void Respawn() //Respawns player
     {
-        playerHealth--;
         if (playerHealth <= 0)
         {
-            Destroy(gameObject);
             //Teleport player to respawn point 
             transform.position = respawnPoint.transform.position;
         }
