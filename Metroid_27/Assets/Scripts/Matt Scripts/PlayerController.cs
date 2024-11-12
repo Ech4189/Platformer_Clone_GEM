@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     public float invincibilityDeltaTime;
 
     public GameObject respawnPoint;
-    
+
     //Matthew Private Variables 
     private Vector3 moveDir; //Allows player to move in given directions
     private Rigidbody rb; //Gives player a rigidbody
@@ -34,15 +34,15 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-  
-        //Matthew, Code for moving Left and Right
-        void FixedUpdate()
-        {
+
+    //Matthew, Code for moving Left and Right
+    void FixedUpdate()
+    {
         //Check for left input
-            if (Input.GetKey(KeyCode.A))
-            {
-                moveDir = Vector3.left;
-                rb.MovePosition(transform.position + moveDir * moveSpeed * Time.deltaTime);
+        if (Input.GetKey(KeyCode.A))
+        {
+            moveDir = Vector3.left;
+            rb.MovePosition(transform.position + moveDir * moveSpeed * Time.deltaTime);
             //rotates character left
             if (facingRight)
             {
@@ -52,11 +52,11 @@ public class PlayerController : MonoBehaviour
         }
 
 
-            //Check for right input
-            if (Input.GetKey(KeyCode.D))
-            {
-                moveDir = Vector3.right;
-                rb.MovePosition(transform.position + moveDir * moveSpeed * Time.deltaTime);
+        //Check for right input
+        if (Input.GetKey(KeyCode.D))
+        {
+            moveDir = Vector3.right;
+            rb.MovePosition(transform.position + moveDir * moveSpeed * Time.deltaTime);
             //rotates character right
             if (!facingRight)
             {
@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        }
+    }
     void Update()
     {
         //Allows the player to jump
@@ -96,15 +96,15 @@ public class PlayerController : MonoBehaviour
     }
     public void Respawn() //Respawns player
     {
-        playerHealth --;
-        if(playerHealth <= 0)
+        playerHealth--;
+        if (playerHealth <= 0)
         {
             Destroy(gameObject);
             //Teleport player to respawn point 
             transform.position = respawnPoint.transform.position;
         }
 
-}
+    }
 
 
 
@@ -112,10 +112,15 @@ public class PlayerController : MonoBehaviour
     //puts player into an Invincibility state
     {
         isInvincible = true;
-        for (float i = 0; i < invincibilityTime; i += invincibilityDeltaTime)
+        for (float i = 0; i < invincibilityTime; )
         {
 
-            yield return new WaitForSeconds(invincibilityDeltaTime);
+            GetComponent<MeshRenderer>().enabled = false;
+            yield return new WaitForSeconds(0.4f);
+            i += .4f;
+            GetComponent<MeshRenderer>().enabled = true;
+            yield return new WaitForSeconds(0.4f);
+            i += .4f;
         }
         isInvincible = false;
     }

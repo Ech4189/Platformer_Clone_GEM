@@ -13,8 +13,6 @@ public class Hazard : MonoBehaviour
     public int enemyDamage;
     public int enemyHealth;
     public float invincibilityTime;
-  
-    public float playerHealth;
 
     /// <summary>
     /// Subtracts the players' health when they get hit, and activates their invincibility frames 
@@ -22,14 +20,17 @@ public class Hazard : MonoBehaviour
     /// <param name="collision"></param>
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent<PlayerController>())
+        PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
+        if (playerController && !playerController.isInvincible)
         {
             //If hazard collides with player, the player health goes down by the amount the enemy damage is set to
-            playerHealth -= enemyDamage;
-            collision.gameObject.GetComponent<PlayerController>().InvincibilityFrames();
+            playerController.playerHealth -= enemyDamage;
+            StartCoroutine(
+                playerController.InvincibilityFrames()
+                );
         }
     }
-    
+
     //Matthew Comment: I made a method with a variable for player invincibility. In here, you may be able to add,
     //an if statement where if the player loses health and is still alive then invincibility activates
     //Code must call the method when you are hit, and whenever you get hit in general check to see if the player
