@@ -45,8 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a61080b4dd63f2442947ce3810e1f936, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyDamage: 0
+  enemyDamage: 35
   enemyHealth: 10
+  invincibilityTime: 0
   playerHealth: 0
 --- !u!1 &8027259923044154789
 GameObject:
