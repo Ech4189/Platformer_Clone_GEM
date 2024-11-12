@@ -23,6 +23,13 @@ public class Hazard : MonoBehaviour
             playerHealth -= enemyDamage;
         }
     }
+    
+    //Matthew Comment: I made a method with a variable for player invincibility. In here, you may be able to add,
+    //an if statement where if the player loses health and is still alive then invincibility activates
+    //Code must call the method when you are hit, and whenever you get hit in general check to see if the player
+    //is invincible. Refer to the PlayerController Script 
+
+
 
     /*private void OnTriggerEnter(Collider other)
     {

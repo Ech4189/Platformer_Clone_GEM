@@ -17,11 +17,14 @@ public class PlayerController : MonoBehaviour
     public GameObject respawnPoint;
     
     //Matthew Private Variables 
-    private Vector3 moveDir;
-    private Rigidbody rb;
-    private bool facingRight = true;
-    
+    private Vector3 moveDir; //Allows player to move in given directions
+    private Rigidbody rb; //Gives player a rigidbody
+    private bool facingRight = true; //Checks if player is facing right
+    private bool isInvincible = false; //Checks if player has invincibility
+    private float invincibilityTime = 5; //Limits player time for invincibility
 
+    [SerializeField] 
+    private float invincibilityDeltaTime;
 
     // Start is called before the first frame update
     void Start()
@@ -72,6 +75,7 @@ public class PlayerController : MonoBehaviour
             print("Jumped");
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
+
     }
     bool IsGrounded() //Checks if the player is on the ground so that there is no infinite jump
     {
@@ -99,5 +103,20 @@ public class PlayerController : MonoBehaviour
             //Teleport player to respawn point 
             transform.position = respawnPoint.transform.position;
         }
+
+}
+
+
+
+    public IEnumerator InvincibilityFrames(float invincibilityTime)
+        //puts player into an Invincibility state
+    {
+        isInvincible = true;
+        for (float i = 0; i < invincibilityTime; i += invincibilityDeltaTime)
+        {
+
+            yield return new WaitForSeconds(invincibilityDeltaTime);
+        }
+            isInvincible = false;
     }
 }

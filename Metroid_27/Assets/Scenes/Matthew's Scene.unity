@@ -925,6 +925,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1352101991}
     m_Modifications:
+    - target: {fileID: 38958110617338943, guid: 35f1425d26d1da44ea0691990be97248, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 38958110617338943, guid: 35f1425d26d1da44ea0691990be97248, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7e42b1cad42606e489b1b73c556a89b1, type: 2}
     - target: {fileID: 1148044131020895897, guid: 35f1425d26d1da44ea0691990be97248, type: 3}
       propertyPath: m_Name
       value: Player
@@ -933,6 +941,10 @@ PrefabInstance:
       propertyPath: respawnPoint
       value: 
       objectReference: {fileID: 88331280}
+    - target: {fileID: 3775718930970344903, guid: 35f1425d26d1da44ea0691990be97248, type: 3}
+      propertyPath: invincibilityDeltaTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4602672759155083622, guid: 35f1425d26d1da44ea0691990be97248, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0089960005
