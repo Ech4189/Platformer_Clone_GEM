@@ -2,9 +2,10 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 /// <summary>
 /// Name: Matthew Borrelli
-/// Date(Last Edited): 11/5/24
+/// Date(Last Edited): 11/12/24
 /// Purpose: For controlling the player movement, shooting, and health
 /// </summary>
 public class PlayerController : MonoBehaviour
@@ -100,8 +101,9 @@ public class PlayerController : MonoBehaviour
     {
         if (playerHealth <= 0)
         {
-            //Teleport player to respawn point 
-            transform.position = respawnPoint.transform.position;
+            print("Game Over");
+            Destroy(gameObject);
+            SceneManager.LoadScene("Game Over");
         }
 
     }
