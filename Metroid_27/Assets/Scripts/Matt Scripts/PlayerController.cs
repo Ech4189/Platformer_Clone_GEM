@@ -2,9 +2,10 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 /// <summary>
 /// Name: Matthew Borrelli
-/// Date(Last Edited): 11/5/24
+/// Date(Last Edited): 11/14/24
 /// Purpose: For controlling the player movement, shooting, and health
 /// </summary>
 public class PlayerController : MonoBehaviour
@@ -96,12 +97,12 @@ public class PlayerController : MonoBehaviour
 
         }
     }
-    public void Respawn() //Respawns player
+    public void Respawn() //(Doesn't actually respawn player it sends them to Game Over Screen)
     {
         if (playerHealth <= 0)
         {
-            //Teleport player to respawn point 
-            transform.position = respawnPoint.transform.position;
+            //Takes Player to Game Over Scene 
+            SceneManager.LoadScene("Game Over");
         }
 
     }
