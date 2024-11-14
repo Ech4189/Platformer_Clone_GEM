@@ -28,11 +28,12 @@ public class Bullets : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //push key to fire
-
         
     }
 
+    /// <summary>
+    /// Moves the bullet when fired
+    /// </summary>
     private void MoveBullet()
     {
         transform.position += speed * Vector3.left * Time.deltaTime;
