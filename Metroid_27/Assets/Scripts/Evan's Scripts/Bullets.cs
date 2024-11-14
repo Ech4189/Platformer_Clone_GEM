@@ -11,6 +11,7 @@ using UnityEngine;
 public class Bullets : MonoBehaviour
 {
     public int bulletDamage;
+    public GameObject bullet;
 
     //Make laser and spawner - the laser will be the bullet
     //Spawner will be activated by a key press rather than a timer
@@ -37,5 +38,16 @@ public class Bullets : MonoBehaviour
     private void MoveBullet()
     {
         transform.position += speed * Vector3.left * Time.deltaTime;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        print("lmao");
+        //when the bullet hits an object, destroy(game object)
+        if (other.gameObject.tag != "Bullet")
+        {
+            Destroy(gameObject);
+            
+        }
     }
 }

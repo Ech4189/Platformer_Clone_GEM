@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1193626183392139304}
   m_Layer: 0
   m_Name: Cylinder (1)
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,6 +117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3578811030583228950}
   - component: {fileID: 8889452322847186779}
+  - component: {fileID: 7289120362845957349}
   m_Layer: 0
   m_Name: RegularBullet
   m_TagString: Bullet
@@ -154,7 +155,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletDamage: 1
+  bullet: {fileID: 4235364732237327018}
   speed: 4
+--- !u!136 &7289120362845957349
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4235364732237327018}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.090831704
+  m_Height: 0.7566433
+  m_Direction: 2
+  m_Center: {x: 0.1532493, y: -0.2318242, z: -0.28722}
 --- !u!1 &5053709562254752774
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,7 +194,7 @@ GameObject:
   - component: {fileID: 2637444965113647738}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
