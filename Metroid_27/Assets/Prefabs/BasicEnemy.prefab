@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 517178288526410601}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,7 +100,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -121,7 +121,6 @@ MonoBehaviour:
   enemyDamage: 15
   enemyHealth: 1
   invincibilityTime: 0
-  playerHealth: 0
 --- !u!1 &6419857825183684568
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,7 +203,6 @@ MonoBehaviour:
   enemyDamage: 15
   enemyHealth: 1
   invincibilityTime: 0
-  playerHealth: 0
 --- !u!114 &3285401096046867930
 MonoBehaviour:
   m_ObjectHideFlags: 0
