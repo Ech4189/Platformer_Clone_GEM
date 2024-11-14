@@ -374,6 +374,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1193626183392139304, guid: e011c0a52c777c549b97daf78ba8d5db, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2637444965113647738, guid: e011c0a52c777c549b97daf78ba8d5db, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3578811030583228950, guid: e011c0a52c777c549b97daf78ba8d5db, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.1972754
@@ -492,6 +500,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HeavyBullet
       objectReference: {fileID: 0}
+    - target: {fileID: 1998315166874725970, guid: b990691c29b47d1419fd012358bfb205, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8202752363470697664, guid: b990691c29b47d1419fd012358bfb205, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.18868405
@@ -531,6 +543,10 @@ PrefabInstance:
     - target: {fileID: 8202752363470697664, guid: b990691c29b47d1419fd012358bfb205, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082972821074863703, guid: b990691c29b47d1419fd012358bfb205, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
