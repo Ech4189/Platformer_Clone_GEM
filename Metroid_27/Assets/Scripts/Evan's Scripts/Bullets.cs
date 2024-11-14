@@ -33,6 +33,9 @@ public class Bullets : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// Makes the bullet move when fired
+    /// </summary>
     private void MoveBullet()
     {
         transform.position += speed * Vector3.left * Time.deltaTime;
