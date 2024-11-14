@@ -1997,6 +1997,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -37.254627
       objectReference: {fileID: 0}
+    - target: {fileID: 4459007566563888048, guid: 1d521a17e2fafc444907feac011ff46e, type: 3}
+      propertyPath: deathY
+      value: -10.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6009004966049613995, guid: 1d521a17e2fafc444907feac011ff46e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
