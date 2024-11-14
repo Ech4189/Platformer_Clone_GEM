@@ -193,8 +193,8 @@ Camera:
   m_GameObject: {fileID: 6502392279960709694}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.04579032, g: 0.20775235, b: 0.46226418, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -360,6 +360,10 @@ PrefabInstance:
     - target: {fileID: 1148044131020895897, guid: 35f1425d26d1da44ea0691990be97248, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3775718930970344903, guid: 35f1425d26d1da44ea0691990be97248, type: 3}
+      propertyPath: deathY
+      value: -10.5
       objectReference: {fileID: 0}
     - target: {fileID: 4602672759155083622, guid: 35f1425d26d1da44ea0691990be97248, type: 3}
       propertyPath: m_LocalPosition.x
