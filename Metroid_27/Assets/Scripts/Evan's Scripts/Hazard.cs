@@ -30,6 +30,12 @@ public class Hazard : MonoBehaviour
                 );
         }
     }
+    
+    public void TakeDamage(int damage)
+    {
+        enemyHealth -= damage;
+    }
+
 
     //Matthew Comment: I made a method with a variable for player invincibility. In here, you may be able to add,
     //an if statement where if the player loses health and is still alive then invincibility activates
