@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Matthew's Scene.unity
     guid: f0932697744331c48a28a8f087032232
+  - enabled: 1
+    path: Assets/Scenes/Gabriel's Scene.unity
+    guid: 621d2ac62b30cf6469b714507ffa20c9
   m_configObjects: {}

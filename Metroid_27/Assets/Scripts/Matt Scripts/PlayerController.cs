@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public float playerHealth = 99; //Dictates players health
     public bool isInvincible = false; //Checks if player has invincibility
     public float invincibilityTime = 5; //Limits player time for invincibility
+    public float deathY = -10.5f;
 
     [SerializeField]
     public float invincibilityDeltaTime;
@@ -77,8 +78,15 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
 
-
+        //Allows player to die
         Respawn();
+
+
+        //Check if player is below a certain y value in the world
+        if (transform.position.y <= deathY)
+        {
+            playerHealth --;
+        }
     }
     bool IsGrounded() //Checks if the player is on the ground so that there is no infinite jump
     {
@@ -104,7 +112,6 @@ public class PlayerController : MonoBehaviour
             //Takes Player to Game Over Scene 
             SceneManager.LoadScene("Game Over");
         }
-
     }
 
 
