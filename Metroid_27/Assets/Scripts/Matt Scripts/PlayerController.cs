@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         //Check for left input
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             moveDir = Vector3.left;
             rb.MovePosition(transform.position + moveDir * moveSpeed * Time.deltaTime);
@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
 
 
         //Check for right input
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
             moveDir = Vector3.right;
             rb.MovePosition(transform.position + moveDir * moveSpeed * Time.deltaTime);
@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //Allows the player to jump
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        if (Input.GetKeyDown(KeyCode.Z) && IsGrounded())
         {
             print("Jumped");
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);

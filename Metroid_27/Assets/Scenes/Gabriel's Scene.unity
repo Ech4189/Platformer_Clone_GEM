@@ -1985,21 +1985,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerSystem
       objectReference: {fileID: 0}
-    - target: {fileID: 2659529048844757234, guid: 1d521a17e2fafc444907feac011ff46e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.12958093
-      objectReference: {fileID: 0}
-    - target: {fileID: 2659529048844757234, guid: 1d521a17e2fafc444907feac011ff46e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 7.069091
-      objectReference: {fileID: 0}
-    - target: {fileID: 2659529048844757234, guid: 1d521a17e2fafc444907feac011ff46e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -37.254627
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459007566563888048, guid: 1d521a17e2fafc444907feac011ff46e, type: 3}
-      propertyPath: deathY
-      value: -10.5
+    - target: {fileID: 5872020910312571781, guid: 1d521a17e2fafc444907feac011ff46e, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6009004966049613995, guid: 1d521a17e2fafc444907feac011ff46e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2040,34 +2028,6 @@ PrefabInstance:
     - target: {fileID: 6009004966049613995, guid: 1d521a17e2fafc444907feac011ff46e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6984839870544529059, guid: 1d521a17e2fafc444907feac011ff46e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.12958093
-      objectReference: {fileID: 0}
-    - target: {fileID: 6984839870544529059, guid: 1d521a17e2fafc444907feac011ff46e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 7.069091
-      objectReference: {fileID: 0}
-    - target: {fileID: 6984839870544529059, guid: 1d521a17e2fafc444907feac011ff46e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -37.254627
-      objectReference: {fileID: 0}
-    - target: {fileID: 8155451979880133980, guid: 1d521a17e2fafc444907feac011ff46e, type: 3}
-      propertyPath: m_ClearFlags
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8155451979880133980, guid: 1d521a17e2fafc444907feac011ff46e, type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0.46226418
-      objectReference: {fileID: 0}
-    - target: {fileID: 8155451979880133980, guid: 1d521a17e2fafc444907feac011ff46e, type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0.20775235
-      objectReference: {fileID: 0}
-    - target: {fileID: 8155451979880133980, guid: 1d521a17e2fafc444907feac011ff46e, type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0.04579032
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
