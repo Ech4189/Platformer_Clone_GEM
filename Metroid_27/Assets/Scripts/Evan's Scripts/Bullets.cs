@@ -13,6 +13,7 @@ public class Bullets : MonoBehaviour
     public int bulletDamage;
     public GameObject bullet;
 
+
     //Make laser and spawner - the laser will be the bullet
     //Spawner will be activated by a key press rather than a timer
     //Spawner will be attached to the player 
@@ -42,12 +43,21 @@ public class Bullets : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print("lmao");
+        Hazard hazard = gameObject.GetComponent<Hazard>();
+       
         //when the bullet hits an object, destroy(game object)
         if (other.gameObject.tag != "Bullet")
         {
+            //if a bullet hits enemy, the enemy takes damage. If the enemy loses all its health,
+            //it disappears before the bullet does
+            if (other.gameObject.tag == "Hazard")
+            {
+                print("lmao");
+                //Bullet Damage - Enemy health
+                hazard.TakeDamage(bulletDamage);
+            }
+
             Destroy(gameObject);
-            
         }
     }
 }
