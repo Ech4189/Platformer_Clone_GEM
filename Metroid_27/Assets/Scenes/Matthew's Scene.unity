@@ -1052,6 +1052,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3775718930970344903, guid: 35f1425d26d1da44ea0691990be97248, type: 3}
+      propertyPath: deathY
+      value: -10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3775718930970344903, guid: 35f1425d26d1da44ea0691990be97248, type: 3}
       propertyPath: respawnPoint
       value: 
       objectReference: {fileID: 88331280}

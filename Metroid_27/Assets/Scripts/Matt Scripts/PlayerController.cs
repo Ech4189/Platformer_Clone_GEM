@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     public float playerHealth = 99; //Dictates players health
     public bool isInvincible = false; //Checks if player has invincibility
     public float invincibilityTime = 5; //Limits player time for invincibility
-    public float deathY = -10.5f;
+    public float deathY = -10.5f; //Prevents player from falling through the floor
 
     [SerializeField]
     public float invincibilityDeltaTime;
