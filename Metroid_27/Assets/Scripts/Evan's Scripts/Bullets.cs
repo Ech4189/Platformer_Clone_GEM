@@ -60,7 +60,6 @@ public class Bullets : MonoBehaviour
             //it disappears before the bullet does
             if (other.gameObject.tag == "Hazard")
             {
-                print("lmao");
                 //Bullet Damage - Enemy health
                 hazard.TakeDamage(bulletDamage);
             }
