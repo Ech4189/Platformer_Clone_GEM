@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         //Check for left input
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             moveDir = Vector3.left;
             rb.MovePosition(transform.position + moveDir * moveSpeed * Time.deltaTime);
@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
 
 
         //Check for right input
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             moveDir = Vector3.right;
             rb.MovePosition(transform.position + moveDir * moveSpeed * Time.deltaTime);
@@ -73,14 +73,14 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //Allows the player to jump
-        if (Input.GetKeyDown(KeyCode.Z) && IsGrounded())
+        if (Input.GetKeyDown(KeyCode.Z) || Input.GetKey(KeyCode.Space) && IsGrounded())
         {
             print("Jumped");
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
 
         //Check for shooting input
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.F))
         {
             print("Shot input detected");
             Shoot();
