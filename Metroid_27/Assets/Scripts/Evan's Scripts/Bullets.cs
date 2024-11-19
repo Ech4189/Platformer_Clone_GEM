@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 /*
- * Name: Evan Henderson
+ * Name: Evan Henderson, Matthew Borrelli
  * Date: 11/5/2024
  * Function: To handle the player's gun functionality
  */

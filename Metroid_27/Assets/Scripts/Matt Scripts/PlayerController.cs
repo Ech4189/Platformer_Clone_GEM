@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 /// <summary>
 /// Name: Matthew Borrelli
-/// Date(Last Edited): 11/14/24
+/// Date(Last Edited): 11/18/24
 /// Purpose: For controlling the player movement, shooting, and health
 /// </summary>
 public class PlayerController : MonoBehaviour
@@ -27,7 +27,6 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb; //Gives player a rigidbody
     private bool facingRight = true; //Checks if player is facing right
     private Vector3 moveDir; //Allows player to move in given directions
-    private bool shootingRight = true;
     private float raycastDist = 1.2f;
 
     // Start is called before the first frame update
