@@ -120,6 +120,11 @@ public class PlayerController : MonoBehaviour
             playerHealth += 200;
             Destroy(other.gameObject);
         }
+        if(other.gameObject.GetComponent<MaxJumpHeightPowerUp>())
+        {
+            jumpForce += other.gameObject.GetComponent<MaxJumpHeightPowerUp>().addJump;
+            Destroy(other.gameObject);
+        }
     }
 
 

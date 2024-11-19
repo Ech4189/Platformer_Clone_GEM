@@ -8,6 +8,7 @@ TagManager:
   - Hazard
   - HealthPack
   - MaxHealthUp
+  - JumpPowerUp
   layers:
   - Default
   - TransparentFX
