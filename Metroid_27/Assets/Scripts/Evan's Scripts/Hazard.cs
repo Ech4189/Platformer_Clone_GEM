@@ -17,8 +17,7 @@ public class Hazard : MonoBehaviour
     /// <summary>
     /// Subtracts the players' health when they get hit, and activates their invincibility frames 
     /// </summary>
-    /// <param name="collision"></param>
-    private void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
         PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
         if (playerController && !playerController.isInvincible)
