@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     private bool facingRight = true; //Checks if player is facing right
     private Vector3 moveDir; //Allows player to move in given directions
     private bool shootingRight = true;
+    private float raycastDist = 1.2f;
 
     // Start is called before the first frame update
     void Start()
@@ -73,11 +74,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //Allows the player to jump
-        if (Input.GetKeyDown(KeyCode.Z) || Input.GetKey(KeyCode.Space) && IsGrounded())
+        if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Space)) && IsGrounded())
         {
             print("Jumped");
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
+        Debug.DrawRay(transform.position, Vector3.down * raycastDist, Color.red);
 
         //Check for shooting input
         if (Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.F))
@@ -99,19 +101,15 @@ public class PlayerController : MonoBehaviour
     bool IsGrounded() //Checks if the player is on the ground so that there is no infinite jump
     {
         float raycastDist = 1.2f;
-        {
+        
             bool IsGrounded = false;
 
             //perform a raycast to check if player is on the ground
             if (Physics.Raycast(transform.position, Vector3.down, raycastDist))
             {
                 IsGrounded = true;
-
-                return IsGrounded;
             }
             return IsGrounded;
-
-        }
     }
     public void Respawn() //(Doesn't actually respawn player it sends them to Game Over Screen)
     {
