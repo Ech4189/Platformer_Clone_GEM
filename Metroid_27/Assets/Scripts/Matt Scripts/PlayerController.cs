@@ -105,14 +105,19 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-    //Allows player to heal from health pickups
-
+    //Allows player to get certain pickups
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<HealthUp>())
         {
             playerHealth += other.gameObject.GetComponent<HealthUp>().healthvalue;
 
+            Destroy(other.gameObject);
+        }
+        if(other.gameObject.GetComponent<MaxHealthUp>())
+        {
+            maxHealth = 199;
+            playerHealth += 200;
             Destroy(other.gameObject);
         }
     }
