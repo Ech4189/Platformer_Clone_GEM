@@ -96,6 +96,19 @@ public class PlayerController : MonoBehaviour
         {
             playerHealth --;
         }
+        //Check for player damage
+
+
+ 
+    }
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (isInvincible)
+        {
+            StartCoroutine(
+             InvincibilityFrames()
+                );
+        }
     }
     bool IsGrounded() //Checks if the player is on the ground so that there is no infinite jump
     {
@@ -138,6 +151,7 @@ public class PlayerController : MonoBehaviour
         isInvincible = false;
     }
     public void Shoot()
+        //Allows player to shoot in both directions
     {
         if (facingRight)
             Instantiate(bullet, transform.position, Quaternion.Euler(0, 270, 0));
