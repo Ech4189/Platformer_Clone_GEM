@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 10; //Dictates move speed of player
     public float jumpForce = 10; //Dictates jumpForce of the player
     public float playerHealth = 99; //Dictates players health
+    public float maxHealth = 100; //Dictates max player health
     public bool isInvincible = false; //Checks if player has invincibility
     public float invincibilityTime = 5; //Limits player time for invincibility
     public float deathY = -10.5f; //Prevents player from falling through the floor
@@ -94,17 +95,45 @@ public class PlayerController : MonoBehaviour
         //Check if player is below a certain y value in the world
         if (transform.position.y <= deathY)
         {
-            playerHealth --;
+            playerHealth--;
         }
-        //Check for player damage
 
+        //Makes Healthpacks unable to go above the max health limit
+        if (playerHealth > maxHealth)
+        {
+            playerHealth = maxHealth;
+        }
 
- 
     }
+    //Allows player to get certain pickups
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.GetComponent<HealthUp>())
+        {
+            playerHealth += other.gameObject.GetComponent<HealthUp>().healthvalue;
+
+            Destroy(other.gameObject);
+        }
+        if(other.gameObject.GetComponent<MaxHealthUp>())
+        {
+            maxHealth = 199;
+            playerHealth += 200;
+            Destroy(other.gameObject);
+        }
+        if(other.gameObject.GetComponent<MaxJumpHeightPowerUp>())
+        {
+            jumpForce += other.gameObject.GetComponent<MaxJumpHeightPowerUp>().addJump;
+            Destroy(other.gameObject);
+        }
+    }
+
+
+    //Allows player to take damage and get invincibility frames
     public void OnCollisionEnter(Collision collision)
     {
-        if (isInvincible)
+        if (!isInvincible && collision.gameObject.GetComponent<Hazard>())
         {
+            playerHealth -= collision.gameObject.GetComponent<Hazard>().enemyDamage;
             StartCoroutine(
              InvincibilityFrames()
                 );

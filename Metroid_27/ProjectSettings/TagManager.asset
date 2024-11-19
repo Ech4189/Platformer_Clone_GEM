@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Bullet
   - Hazard
+  - HealthPack
+  - MaxHealthUp
+  - JumpPowerUp
   layers:
   - Default
   - TransparentFX
