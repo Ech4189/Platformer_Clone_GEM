@@ -34,6 +34,10 @@ public class Hazard : MonoBehaviour
     public void TakeDamage(int damage)
     {
         enemyHealth -= damage;
+        if (enemyHealth <= 0)
+        {
+            Destroy(gameObject.transform.parent.gameObject);
+        }
     }
 
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 /*
  * Name: Evan Henderson
@@ -30,7 +31,7 @@ public class Bullets : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        MoveBullet();
     }
 
     /// <summary>
@@ -38,15 +39,22 @@ public class Bullets : MonoBehaviour
     /// </summary>
     private void MoveBullet()
     {
-        transform.position += speed * Vector3.left * Time.deltaTime;
+        if (transform.localEulerAngles.y == 90)
+        {
+            transform.position += speed * Vector3.left * Time.deltaTime;
+        }
+        else 
+        {
+            transform.position += speed * Vector3.right * Time.deltaTime;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Hazard hazard = gameObject.GetComponent<Hazard>();
+        Hazard hazard = other.gameObject.GetComponent<Hazard>();
        
         //when the bullet hits an object, destroy(game object)
-        if (other.gameObject.tag != "Bullet")
+        if (other.gameObject.tag != "Bullet" && other.gameObject.tag != "Player")
         {
             //if a bullet hits enemy, the enemy takes damage. If the enemy loses all its health,
             //it disappears before the bullet does

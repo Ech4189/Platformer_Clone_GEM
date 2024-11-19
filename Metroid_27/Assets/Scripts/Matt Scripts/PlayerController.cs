@@ -17,16 +17,17 @@ public class PlayerController : MonoBehaviour
     public bool isInvincible = false; //Checks if player has invincibility
     public float invincibilityTime = 5; //Limits player time for invincibility
     public float deathY = -10.5f; //Prevents player from falling through the floor
+    public GameObject bullet;
 
     [SerializeField]
     public float invincibilityDeltaTime;
-
     public GameObject respawnPoint;
 
     //Matthew Private Variables 
-    private Vector3 moveDir; //Allows player to move in given directions
     private Rigidbody rb; //Gives player a rigidbody
     private bool facingRight = true; //Checks if player is facing right
+    private Vector3 moveDir; //Allows player to move in given directions
+    private bool shootingRight = true;
 
     // Start is called before the first frame update
     void Start()
@@ -76,6 +77,13 @@ public class PlayerController : MonoBehaviour
         {
             print("Jumped");
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        }
+
+        //Check for shooting input
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            print("Shot input detected");
+            Shoot();
         }
 
         //Allows player to die
@@ -131,5 +139,12 @@ public class PlayerController : MonoBehaviour
             i += .4f;
         }
         isInvincible = false;
+    }
+    public void Shoot()
+    {
+        if (facingRight)
+            Instantiate(bullet, transform.position, Quaternion.Euler(0, 270, 0));
+        else
+            Instantiate(bullet, transform.position, Quaternion.Euler(0, 90, 0));
     }
 }

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3775718930970344903}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,6 +154,8 @@ MonoBehaviour:
   playerHealth: 99
   isInvincible: 0
   invincibilityTime: 5
+  deathY: -10.5
+  bullet: {fileID: 4235364732237327018, guid: e011c0a52c777c549b97daf78ba8d5db, type: 3}
   invincibilityDeltaTime: 5
   respawnPoint: {fileID: 0}
 --- !u!1001 &3178255435268137212
